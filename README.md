@@ -1,8 +1,8 @@
-![GitHub repo size](https://img.shields.io/github/repo-size/Hi-Windom/jupyter-binder-base?logo=github&style=flat-square) [![Build Binder Container & Gen Release](https://github.com/Hi-Windom/jupyter-binder-base/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/Hi-Windom/jupyter-binder-base/actions/workflows/ci.yaml) [![Docker](https://img.shields.io/badge/Docker-585899?logo=docker&style=flat-square)](https://hub.docker.com/repository/docker/soltus/jupyter-binder-base) ![Docker Pulls](https://img.shields.io/docker/pulls/soltus/jupyter-binder-base?style=flat-square) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/soltus/jupyter-binder-base?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/Hi-Windom/jupyter-binder-python?logo=github&style=flat-square) [![Build Binder Container & Gen Release](https://github.com/Hi-Windom/jupyter-binder-python/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/Hi-Windom/jupyter-binder-python/actions/workflows/ci.yaml) [![Docker](https://img.shields.io/badge/Docker-585899?logo=docker&style=flat-square)](https://hub.docker.com/repository/docker/soltus/jupyter-binder-python) ![Docker Pulls](https://img.shields.io/docker/pulls/soltus/jupyter-binder-python?style=flat-square) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/soltus/jupyter-binder-python?style=flat-square)
 
 # 简介
 
-此仓库托管在 [Github](https://github.com/Hi-Windom/jupyter-binder-base) ，是一八六战略二期工程项目，绛亽新学习融创示范项目
+此仓库托管在 [Github](https://github.com/Hi-Windom/jupyter-binder-python) ，是一八六战略二期工程项目，绛亽新学习融创示范项目
 
 其开源贡献包括两大方面：
 
@@ -22,13 +22,13 @@
 >
 > 是否考虑集成 C++ 内核？不会考虑，C++ 并不适合 notebook ，集成的意义不明显
 
-打开链接 [快速开始](https://mybinder.org/v2/gh/Hi-Windom/jupyter-binder-base/HEAD?urlpath=lab/tree/binder.ipynb)
+打开链接 [快速开始](https://mybinder.org/v2/gh/Hi-Windom/jupyter-binder-python/HEAD?urlpath=lab/tree/binder.ipynb)
 
-假如你有一个远端仓库（比如 Github），使用 [克隆 ](https://mybinder.org/v2/gh/Hi-Windom/jupyter-binder-base/HEAD?urlpath=lab/tree/loader.ipynb)链接；如果只是想运行单个文件，直接从本地上传是最好的选择
+假如你有一个远端仓库（比如 Github），使用 [克隆 ](https://mybinder.org/v2/gh/Hi-Windom/jupyter-binder-python/HEAD?urlpath=lab/tree/loader.ipynb)链接；如果只是想运行单个文件，直接从本地上传是最好的选择
 
 ~~任意 ipynb 公开仓库可 [在线生成链接](https://hub.jupyter.org/nbgitpuller/link?tab=binder) ，而无需提供额外配置~~（暂不可用，故障排查中）
 
-基于 Binder 实现，可以在 `Dockerfile` 中 `FROM soltus/jupyter-binder-base:latest` 开始构建自定义的环境镜像
+基于 Binder 实现，可以在 `Dockerfile` 中 `FROM soltus/jupyter-binder-python:latest` 开始构建自定义的环境镜像
 
 ## 在 Windows 本地复苏
 
@@ -65,4 +65,4 @@ jupyter lab --port='6969' --ip='*' --no-browser --allow-root --notebook-dir='D:\
 
 # 初始化工作
 
-参考 [index.ipynb](https://github.com/Hi-Windom/jupyter-binder-base/blob/main/index.ipynb)
+参考 [index.ipynb](https://github.com/Hi-Windom/jupyter-binder-python/blob/main/index.ipynb)
