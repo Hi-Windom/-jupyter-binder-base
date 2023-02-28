@@ -1,0 +1,73 @@
+name: Build Binder Container & Gen Release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version'
+        required: true
+        default: "v"
+      tag:
+        description: 'docker binder MYBINDERORG_TAG'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout files in repo
+      uses: actions/checkout@master
+      with:
+        ref: main
+
+    - name: update jupyter dependencies with repo2docker
+      uses: jupyterhub/repo2docker-action@master
+      id: build_docker
+      with:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_HUB_USER }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_PWD }}
+        BINDER_CACHE: true # 写入 binder/Dockerfile
+        PUBLIC_REGISTRY_CHECK: true # 检查是否是公开的镜像服务
+        MYBINDERORG_TAG: ${{ github.event.inputs.tag }}
+
+  create_release:
+    name: Create Release
+    needs: build
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+      release_version: ${{ steps.release_info.outputs.release_version }}
+      version: ${{ github.event.inputs.version }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - run: pip install PyGithub
+
+      - name: Gather Release Information
+        id: release_info
+        run: |
+          echo "::set-output name=release_title::$(git show --format=%s --no-patch | head -1)"
+          echo "::set-output name=release_version::${{ github.event.inputs.version }}_$(TZ=Asia/Shanghai date +'%Y%m%d')"
+          changelog=$(python scripts/release.py -t ${{ github.event.inputs.version }} Hi-Windom/jupyter-binder-base)
+          changelog="${changelog//'%'/'%25'}"
+          changelog="${changelog//$'\n'/'%0A'}"
+          changelog="${changelog//$'\r'/'%0D'}"
+          echo "::set-output name=release_body::$changelog"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_name: ${{ steps.release_info.outputs.release_version }}
+          tag_name: ${{ github.event.inputs.version }}
+          body: "${{ steps.release_info.outputs.release_body }}"
+          draft: false
+          prerelease: false

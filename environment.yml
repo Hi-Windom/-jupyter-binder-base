@@ -1,0 +1,33 @@
+channels:
+- conda-forge
+- nodefaults
+dependencies:
+#>>> for binder, not a fully list
+- jupyterlab-language-pack-zh-CN # lab ext
+- ipywidgets==7.6.6 #>>> REF: https://github.com/g2nb/nbtools/issues/5
+- jupyterlab-cell-flash # lab ext
+- jupyterlab_execute_time # lab ext
+- ipympl # lab ext
+- nbdime # lab ext
+- jupyterlab-git # lab ext
+- jupyter-archive # lab ext
+- jupyterlab-lsp  # lab ext
+# - jedi-language-server  # python lsp
+- python-lsp-server # instead of jedi-language-server
+- pyls-memestra # python-lsp-server plugin
+# - xeus-cling # c++ kernel, do not need and can not work
+#>>> extend list
+- hiplot
+- fastapi
+- aiohttp
+- Scrapy
+#>>> provided by jupyter/scipy-notebook within requirements
+# - numpy
+# - sympy
+# - scipy
+# - matplotlib
+# - seaborn
+# - pandas
+# - Pillow
+# - requests
+# - beautifulsoup4
