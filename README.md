@@ -13,15 +13,6 @@
 
 ## 在 [Binder (mybinder.org)](https://mybinder.org/) 使用
 
-> 已集成以下内核：
->
-> 1. [.Net Interactive](https://github.com/dotnet/interactive/)
-> 2. [GoNB](https://github.com/janpfeifer/gonb)
-> 3. [tslab](https://github.com/yunabe/tslab)
-> 4. [IJavascript](https://github.com/n-riesco/ijavascript)
->
-> 是否考虑集成 C++ 内核？不会考虑，C++ 并不适合 notebook ，集成的意义不明显
-
 打开链接 [快速开始](https://mybinder.org/v2/gh/Hi-Windom/jupyter-binder-python/HEAD?urlpath=lab/tree/binder.ipynb)
 
 假如你有一个远端仓库（比如 Github），使用 [克隆 ](https://mybinder.org/v2/gh/Hi-Windom/jupyter-binder-python/HEAD?urlpath=lab/tree/loader.ipynb)链接；如果只是想运行单个文件，直接从本地上传是最好的选择
