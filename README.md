@@ -4,6 +4,8 @@
 
 此仓库托管在 [Github](https://github.com/Hi-Windom/jupyter-binder-python) ，是一八六战略二期工程项目，绛亽新学习融创示范项目
 
+姊妹仓库：[jupyter-binder](https://github.com/Hi-Windom/jupyter-binder) 额外提供更多 Lab 插件、常用 Python 包以及多个扩展内核
+
 其开源贡献包括两大方面：
 
 1. 提供一个开箱即用的在线 Jupyter Lab 环境
