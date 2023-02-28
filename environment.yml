@@ -9,7 +9,8 @@ dependencies:
 - jupyterlab_execute_time # lab ext
 - ipympl # lab ext
 - nbdime # lab ext
-- jupyterlab-git # lab ext
+# - jupyterlab-git # lab ext
+    #>>> without git env
 - jupyter-archive # lab ext
 - jupyterlab-lsp  # lab ext
 # - jedi-language-server  # python lsp
