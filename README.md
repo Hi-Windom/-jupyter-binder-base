@@ -8,11 +8,6 @@
 
 此仓库的 issues 已关闭，转  [jupyter-binder issues label=python](https://github.com/Hi-Windom/jupyter-binder/issues?q=is%3Aopen+is%3Aissue+label%3A%F0%9F%A7%A9Python)
 
-其开源贡献包括两大方面：
-
-1. 提供一个开箱即用的在线 Jupyter Lab 环境
-2. 本地快速搭建 Jupyter Lab 环境，包括基础环境与扩展环境
-
 # 使用
 
 ## 在 [Binder (mybinder.org)](https://mybinder.org/) 使用
