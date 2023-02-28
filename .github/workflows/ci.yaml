@@ -28,6 +28,7 @@ jobs:
         BINDER_CACHE: true # 写入 binder/Dockerfile
         PUBLIC_REGISTRY_CHECK: true # 检查是否是公开的镜像服务
         MYBINDERORG_TAG: ${{ github.event.inputs.tag }}
+        ADDITIONAL_TAG: ${{ github.event.inputs.tag }}
 
   create_release:
     name: Create Release
