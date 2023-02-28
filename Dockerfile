@@ -1,10 +1,3 @@
-# kernel list https://github.com/jupyter/jupyter/wiki/Jupyter-kernels
-
-FROM golang:1.20.1-bullseye as GO
-# debian env
-RUN go env
-# RUN find / -type f -name "go"
-
 FROM jupyter/base-notebook:python-3.9.13 as JUPYTER
 ARG NB_USER=jovyan
 ARG NB_UID=1000
@@ -17,16 +10,6 @@ ENV HOME=/home/${NB_USER}
 #     --uid ${NB_UID} \
 #     ${NB_USER}
 USER root
-COPY --from=GO /go /go
-COPY --from=GO /usr/local/go /usr/local/go
-ENV GOVERSION="go1.20.1" GCCGO="gccgo" GOENV=/home/${NB_USER}/.config/go/env GOROOT=/usr/local/go GOPATH=/go GOMODCACHE=/go/pkg/mod GOTOOLDIR=/usr/local/go/pkg/tool/linux_amd64
-# PATH 单列项
-ENV PATH=$PATH:/usr/local/go/bin/:/go/bin/
-# jupyter GO kernel
-RUN go install github.com/janpfeifer/gonb@latest \
-&& go install golang.org/x/tools/cmd/goimports@latest \
-&& go install golang.org/x/tools/gopls@latest \
-&& gonb --install
 COPY . /home/${NB_USER}
 COPY environment.yml /tmp/environment.yml
 RUN sudo rm -rf environment.yml \
