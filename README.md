@@ -12,6 +12,8 @@
 
 ## 在 [Binder (mybinder.org)](https://mybinder.org/) 使用
 
+> 缺少 node.js 和 git ，需要自行安装
+
 打开链接 [快速开始](https://mybinder.org/v2/gh/Hi-Windom/jupyter-binder-python/HEAD?urlpath=lab/tree/binder.ipynb)
 
 假如你有一个远端仓库（比如 Github），使用 [克隆 ](https://mybinder.org/v2/gh/Hi-Windom/jupyter-binder-python/HEAD?urlpath=lab/tree/loader.ipynb)链接；如果只是想运行单个文件，直接从本地上传是最好的选择
@@ -20,10 +22,12 @@
 
 基于 Binder 实现，可以在 `Dockerfile` 中 `FROM soltus/jupyter-binder-python:latest` 开始构建自定义的环境镜像
 
+更多内容参考 [binder.ipynb](https://github.com/Hi-Windom/jupyter-binder/blob/main/binder.ipynb)
+
 ## 在 Windows 本地复苏
 
 作者很懒，这里什么也没写
 
 # 初始化工作
 
-作者很懒，这里什么也没写
+参考 [index.ipynb](https://github.com/Hi-Windom/jupyter-binder/blob/main/index.ipynb)
