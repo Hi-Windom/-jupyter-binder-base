@@ -14,7 +14,7 @@
 
 > 缺少 node.js 和 git ，需要自行安装
 
-打开链接 [快速开始](https://mybinder.org/v2/gh/Hi-Windom/jupyter-binder-python/HEAD?urlpath=lab/tree/binder.ipynb)
+打开链接 [快速开始](https://mybinder.org/v2/gh/Hi-Windom/jupyter-binder-python/HEAD?urlpath=lab)
 
 假如你有一个远端仓库（比如 Github），使用 [克隆 ](https://mybinder.org/v2/gh/Hi-Windom/jupyter-binder-python/HEAD?urlpath=lab/tree/loader.ipynb)链接；如果只是想运行单个文件，直接从本地上传是最好的选择
 
