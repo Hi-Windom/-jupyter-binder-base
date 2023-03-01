@@ -23,7 +23,8 @@ RUN mamba env update -n base --file /tmp/environment.yml \
 # ignore warn, can not work if use sudo -H
 RUN pip install digautoprofiler -q \
 && pip install jupyter-wysiwyg -q \
-&& pip install nbtools
+&& pip install nbtools -q \
+&& pip install nbgitpuller -q
 #
 # nbgitpuller 用于内容仓库与环境仓库分离
 # 暂不可用 https://github.com/jupyterhub/nbgitpuller/issues/292
