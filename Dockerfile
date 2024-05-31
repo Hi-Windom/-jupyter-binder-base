@@ -1,4 +1,4 @@
-FROM jupyter/base-notebook:python-3.9.13 as JUPYTER
+FROM jupyter/base-notebook:python-3.11 as JUPYTER
 ARG NB_USER=jovyan
 ARG NB_UID=1000
 ENV USER=${NB_USER} NB_UID=${NB_UID}
